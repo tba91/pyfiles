@@ -4,9 +4,9 @@ management for files with python
 ## Quickstart
 ### simple usage:
 ```
-from pyfiles.file import File
+import pyfiles
 
-file = File('some/file.example')
+file = pyfiles.File('some/file.example')
 
 print(file.path)
 -> Path('some/file.example)
@@ -38,10 +38,13 @@ file.permission.change_permission('others', 'write')
 ```
 
 
-### cogrant or revoke permission for read to the file's groupntent:
+### content:
 ```
 for line in file.content.read_only():
     print(line)
+
+'some text' in file.content
+-> True
 ```
 
 
