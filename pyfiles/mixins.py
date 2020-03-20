@@ -1,6 +1,7 @@
 import os
 import stat
-
+import pwd
+import grp
 
 class FileInfoMixin:
 
@@ -43,3 +44,19 @@ class FileInfoMixin:
     @property
     def links(self):
         return os.stat(self.path).st_nlink
+
+    @property
+    def owner_name(self):
+        return pwd.getpwuid(self.uid).pw_name
+    
+    @property
+    def owner_directory(self):
+        return pwd.getpwuid(self.uid).pw_dir
+
+    @property
+    def owner_shell(self):
+        return pwd.getpwuid(self.uid).pw_shell
+
+    @property
+    def group_name(self):
+        return grp.getgrgid(self.gid).gr_name

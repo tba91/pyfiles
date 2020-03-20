@@ -33,6 +33,12 @@ class FileContent:
     def __init__(self, path: str):
         self._path = path
     
+    def __contains__(self, pattern: str):
+        for line in self.read_only():
+            if pattern in line:
+                return True
+        return False
+
     def append_to_file(self, content):
         with open(self._path, '+a') as file:
             file.write(content)
@@ -41,8 +47,8 @@ class FileContent:
         with open(self._path, 'r') as file:
             for line in file.readlines():
                 yield line
-
-
+  
+  
 class FilePermission:
     def __init__(self, file: File):
         self.file = file
