@@ -25,9 +25,20 @@ print(file.permission.onwer.is_writable)
 
 print(file.permission.onwer.is_readable)
 -> True
+
+file.permission.change_permission('owner', 'execute')
+-> grants or revokes execution permission to the owner of the file
+
+file.permission.change_permission('group', 'read')
+-> grants or revokes read permission to the file group
+
+file.permission.change_permission('others', 'write')
+-> grants or revokes write permission to others
+
 ```
 
-### content:
+
+### cogrant or revoke permission for read to the file's groupntent:
 ```
 for line in file.content.read_only():
     print(line)

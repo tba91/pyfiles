@@ -3,9 +3,9 @@ from setuptools import setup
 setup(
     name='pyfiles',
     packages = ['pyfiles'],
-    version='0.1.0',
+    version='0.2.0',
     license='MIT',
-    description='manage for files with python',
+    description='management for files with python',
     author='TBA',
     keywords=['files', 'management'],
     url='https://github.com/tba91/pyfiles',
