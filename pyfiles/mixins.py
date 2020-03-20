@@ -1,6 +1,7 @@
 import os
 import stat
 
+
 class FileInfoMixin:
 
     @property

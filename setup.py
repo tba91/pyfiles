@@ -9,7 +9,7 @@ setup(
     author='TBA',
     keywords=['files', 'management'],
     url='https://github.com/tba91/pyfiles',
-    download_url='https://github.com/tba91/pyfiles/archive/0.1.0.tar.gz',
+    download_url='https://github.com/tba91/pyfiles/archive/0.2.1.tar.gz',
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',

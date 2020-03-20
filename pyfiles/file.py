@@ -5,10 +5,9 @@ from pathlib import Path
 from dataclasses import dataclass
 from enum import Enum
 
-from .mixins import FileInfoMixin
+import mixins
 
-
-class File(FileInfoMixin):
+class File(mixins.FileInfoMixin):
     def __init__(self, filepath: str):
         self.path = Path(filepath)
         if not self.path.exists():
@@ -27,11 +26,7 @@ class File(FileInfoMixin):
         )
     
     def octal_format_to_string(self):
-        return (
-            str(self.permission.owner.octal_notation()),
-            str(self.permission.group.octal_notation()),
-            str(self.permission.others.octal_notation())
-        )
+        return ''.join(str(item) for item in self.octal_format())
 
 
 class FileContent:
@@ -78,7 +73,7 @@ class FilePermission:
         output = subprocess.run(['chmod', ''.join(self.file.octal_format_to_string()), self.file.path], capture_output=True)
         if output.stderr:
             print({'error': str(output.stderr)})
-            raise RuntimeError(f'Not possible to change file permissions')
+            raise OSError(f'Not possible to change file permissions')
 
 
 class _Permission:
