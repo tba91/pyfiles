@@ -5,7 +5,7 @@ from pathlib import Path
 from dataclasses import dataclass
 from enum import Enum
 
-import mixins
+from . import mixins
 
 class File(mixins.FileInfoMixin):
     def __init__(self, filepath: str):
@@ -48,7 +48,7 @@ class FileContent:
             for line in file.readlines():
                 yield line
   
-  
+
 class FilePermission:
     def __init__(self, file: File):
         self.file = file
