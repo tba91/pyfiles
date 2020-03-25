@@ -17,13 +17,13 @@ print(file.path)
 print(file.permission.owner)
 -> 'rwx'
 
-print(file.permission.onwer.is_executable)
+print(file.permission.owner.is_executable)
 -> True
 
-print(file.permission.onwer.is_writable)
+print(file.permission.owner.is_writable)
 -> True
 
-print(file.permission.onwer.is_readable)
+print(file.permission.owner.is_readable)
 -> True
 
 file.permission.change_permission('owner', 'execute')
@@ -46,6 +46,13 @@ for line in file.content.read_only():
 'some text' in file.content
 -> True
 ```
+
+### Todo:
+- add info (path)
+- move file
+- cp file
+- del file
+- create file
 
 
 

@@ -167,22 +167,4 @@ class Permissions:
     def is_readable(self) -> bool:
         return True if self.read == "r" else False
 
-
-    
-
-
-
-
-
-class InfoFile:
-    def __init__(self, file: File):
-        self.info_file = stat(file.path)
-    
-    @property
-    def size(self) -> str:
-        return self.info_file.st_size
-    
-    @property
-    def mode(self):
-        return self.info_file.st_mode
     
